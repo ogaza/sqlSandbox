@@ -7,6 +7,8 @@ Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Chapter.04.QueryingMultiple
 EndProject
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Chapter.05.GroupingAndSummarizingData", "Chapter.05.GroupingAndSummarizingData\Chapter.05.GroupingAndSummarizingData.ssmssqlproj", "{F1EFBCD8-3CAD-4FDC-8450-080365957678}"
 EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Chapter.06.ManipulatingData", "Chapter.06.ManipulatingData\Chapter.06.ManipulatingData.ssmssqlproj", "{9A26617C-34C3-4A05-B5A4-DEE2A7D5A432}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
@@ -14,6 +16,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E9A731C0-F5A5-4E47-8EFE-2B8C355BBEED}.Default|Default.ActiveCfg = Default
 		{F1EFBCD8-3CAD-4FDC-8450-080365957678}.Default|Default.ActiveCfg = Default
+		{9A26617C-34C3-4A05-B5A4-DEE2A7D5A432}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
