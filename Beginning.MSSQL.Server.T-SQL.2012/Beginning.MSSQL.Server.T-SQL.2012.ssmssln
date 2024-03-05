@@ -5,12 +5,15 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Chapter.04.QueryingMultipleTables", "Chapter.04.QueryingMultipleTables\Chapter.04.QueryingMultipleTables.ssmssqlproj", "{E9A731C0-F5A5-4E47-8EFE-2B8C355BBEED}"
 EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Chapter.05.GroupingAndSummarizingData", "Chapter.05.GroupingAndSummarizingData\Chapter.05.GroupingAndSummarizingData.ssmssqlproj", "{F1EFBCD8-3CAD-4FDC-8450-080365957678}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Default|Default = Default|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E9A731C0-F5A5-4E47-8EFE-2B8C355BBEED}.Default|Default.ActiveCfg = Default
+		{F1EFBCD8-3CAD-4FDC-8450-080365957678}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
