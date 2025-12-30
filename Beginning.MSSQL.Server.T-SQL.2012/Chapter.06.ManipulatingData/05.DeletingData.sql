@@ -1,6 +1,6 @@
 /* Using DELETE (p. 218) */
 
-Use AdventureWorks2012;
+Use AdventureWorks2022;
 
 /*
 Copies of the existing tables
@@ -133,3 +133,107 @@ you delete them.
 /*
 Deleting from a Table Using a Join or a Subquery (p. 221)
 */
+
+/*
+You can also remove rows from a table that is involved in a join to restrict 
+which rows the statement deletes. You may delete rows from only one of the tables. 
+Often developers will use a subquery instead of a join to accomplish the same thing.
+*/
+
+--1 
+/*
+-- drop demo tables
+DROP TABLE dbo.demoSalesOrderDetail
+DROP TABLE dbo.demoSalesOrderHeader
+
+-- create and populate the demo tables
+SELECT * INTO dbo.demoSalesOrderDetail FROM Sales.SalesOrderDetail
+SELECT * INTO dbo.demoSalesOrderHeader FROM Sales.SalesOrderHeader
+
+write SELECT  statements first to test your WHERE clause 
+and to make sure you will delete the correct rows
+*/
+
+--SELECT 
+--  d.SalesOrderID, 
+--  SalesOrderNumber 
+--FROM 
+--  dbo.demoSalesOrderDetail AS 
+--  d 
+--  INNER JOIN 
+--  dbo.demoSalesOrderHeader AS 
+--  h 
+--    ON 
+--      d.SalesOrderID = h.SalesOrderID 
+--WHERE 
+--  h.SalesOrderNumber = 'SO71797'
+
+--2 
+/*
+The syntax and this example used an INNER JOIN , 
+but you can also use an OUTER JOIN
+*/
+--DELETE 
+--  d 
+--FROM 
+--  dbo.demoSalesOrderDetail AS 
+--  d 
+--  INNER JOIN 
+--  dbo.demoSalesOrderHeader AS 
+--  h 
+--    ON 
+--    d.SalesOrderID = h.SalesOrderID 
+--WHERE 
+--  h.SalesOrderNumber = 'SO71797' 
+
+/*
+Using the alias ensures that the DELETE  part 
+of the statement is tied to the SELECT  part of the statement
+This helps to avoid accidental deletion of all the records a table 
+like in the following command:
+
+DELETE dbo.demoSalesOrderDetail 
+SELECT d.SalesOrderID 
+FROM 
+  dbo.demoSalesOrderDetail AS d 
+  INNER JOIN 
+  dbo.demoSalesOrderHeader AS h 
+    ON d.SalesOrderID = h.SalesOrderID 
+WHERE 
+  h.SalesOrderNumber = 'SO71797'; 
+*/
+
+--4 
+/*
+DROP TABLE [dbo].[demoProduct]
+DROP TABLE dbo.demoSalesOrderDetail
+
+SELECT * INTO [dbo].[demoProduct] from Production.Product
+SELECT * INTO dbo.demoSalesOrderDetail FROM Sales.SalesOrderDetail
+*/
+
+--SELECT 
+--  SalesOrderID, 
+--  ProductID 
+--FROM 
+--  dbo.demoSalesOrderDetail 
+--WHERE 
+--  ProductID NOT IN (
+--    SELECT ProductID 
+--    FROM dbo.demoProduct 
+--    WHERE ProductID IS NOT NULL
+--  )
+
+----5 
+--DELETE FROM 
+--  dbo.demoSalesOrderDetail 
+--WHERE 
+--  ProductID NOT IN (
+--    SELECT ProductID 
+--    FROM dbo.demoProduct 
+--    WHERE ProductID IS NOT NULL
+--  ) 
+
+---------------------------------------------------------------------
+-- Truncating 
+---------------------------------------------------------------------
