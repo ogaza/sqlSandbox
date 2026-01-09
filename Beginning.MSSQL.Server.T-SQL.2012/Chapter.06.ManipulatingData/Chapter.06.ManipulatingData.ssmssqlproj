@@ -31,6 +31,12 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>05.DeletingData.sql</FullPath>
         </FileNode>
+        <FileNode Name="06.SequenceTests.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:(local):False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>(local)</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>06.SequenceTests.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
